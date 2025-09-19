@@ -162,4 +162,4 @@ void CompareStringsFromEnd(int amount_of_str, char **mass_of_ptr)//сравни�
         }
     }
 
-}
+}//
