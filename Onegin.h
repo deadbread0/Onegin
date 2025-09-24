@@ -6,10 +6,23 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+struct InfAboutText {
+    char* text;
+    int size;
+    int* amount_of_str;
+    char **array_of_ptr;
+    FILE* output_filee;
+};
+
 char* MyOwnStrdup(const char*);
 
-void PutsArrayOfPointersToStrings(char*, int, char**, int*);
-void CompareStrings(int, char**);
-void CompareStringsFromEnd(int, char **);
-void OutputInFile(FILE*, int, char**);
-
+void PutsArrayOfPointersToStrings(InfAboutText*);
+int CompareStrings(int, char**, int);
+int CompareStringsFromEnd(int, char**, int);
+void OutputInFile(InfAboutText*);
+int GetSizeOfInputFile(const char*);
+int ReadText(FILE*, char*, int);
+void OutputFirstTextInFile(InfAboutText*);
+bool CheckFile(FILE*, int, int);
+int compare(const void*, const void*);
+void BubbleSort(InfAboutText*, int (*pt)(int, char**, int));
